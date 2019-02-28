@@ -127,6 +127,8 @@ Paypal.prototype.pay = function(invoiceNumber, amount, description, currency, re
 		params.LOCALECODE = self.locale;
 
 	params.METHOD = 'SetExpressCheckout';
+	params.SOLUTIONTYPE = 'Sole';
+	params.LANDINGPAGE = 'Billing';
 
 	self.request(self.url, 'POST', params, function(err, data) {
 		if (err)
